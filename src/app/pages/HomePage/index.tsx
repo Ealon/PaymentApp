@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { NavBar } from 'app/components/NavBar';
 import { Masthead } from './Masthead';
 import { Features } from './Features';
+import ShapeAnimation from './ShapeAnimation';
 import { PageWrapper } from 'app/components/PageWrapper';
 
 export function HomePage() {
@@ -17,6 +18,7 @@ export function HomePage() {
       </Helmet>
       <NavBar />
       <PageWrapper>
+        <ShapeAnimation />
         <Masthead />
         <Features />
       </PageWrapper>

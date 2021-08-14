@@ -1,0 +1,82 @@
+:root,
+body {
+  --height: 100px;
+  --width: 100px;
+  --animate-duration: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  --gray-light: #f5f7f8;
+  --gray: #ac9fb5;
+  --purple-dark: #1c1a5c;
+  --orange: #e25853;
+  --red: #e61930;
+  --purple-light: #615294;
+  --purple: #52406a;
+  --color: #9f7591;
+}
+
+.quarterCircle {
+  width: var(--width);
+  height: var(--height);
+  overflow: hidden;
+}
+
+.quarterCircle > .fill {
+  width: 100%;
+  height: 100%;
+  background-color: var(--purple-light);
+  border-top-left-radius: 100%;
+  transform-origin: bottom right;
+  transform: rotate(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.quarterCircle:hover > .fill {
+  transform: rotate(90deg);
+  background-color: coral;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: var(--orange);
+  border-radius: 50%;
+}
+
+.bounceIn {
+  animation-duration: 0.6s;
+  animation-name: bounceIn;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  80% {
+    transform: scale3d(0.95, 0.95, 0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
